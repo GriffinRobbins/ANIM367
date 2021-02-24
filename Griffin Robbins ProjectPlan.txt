@@ -1,0 +1,13 @@
+Goals:
+Time Thief can walk arounf and attack with player input
+Other two characters can walk and attack with simple AI
+All characters recoil when they attack 
+
+~~~~~~~~~~~~~~~~~~~~~
+Techinical Goals:
+-Revise character controller system so that it moves more cleanly 
+-Revise how attacks and recoil are handled
+-Create pathfinding AI with Nav Meshes
+-Create AI to attack player 
+-Add health to all characters so that they disapear 
+-Create effects for when characters potentially use moves
