@@ -1,5 +1,5 @@
 Goals:
-Time Thief can walk arounf and attack with player input
+Time Thief can walk around and attack with player input
 Other two characters can walk and attack with simple AI
 All characters recoil when they attack 
 
