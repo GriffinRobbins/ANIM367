@@ -77,7 +77,7 @@ public class Character : MonoBehaviour
     {
         
         yield return new WaitForSeconds(.5f);
-        counter++;
+        counter++; 
     }
 
     IEnumerator EndCycle()

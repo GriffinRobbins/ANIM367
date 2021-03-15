@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public bool isSwinging = false;
 
     public int counter = 0;
+
+    public int health = 5;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -35,31 +37,18 @@ public class PlayerController : MonoBehaviour
             {
                 
                 playerAnim.SetFloat("Swing", 0f);
+                
                 StartCoroutine("WaitForAnimation");
 
             }
 
-            else if (counter == 1)
-            {
-                isSwinging = true;
-                playerAnim.SetFloat("Swing", .5f);
-                StartCoroutine("WaitForAnimation");
-
-            }
-            else if (counter >= 2)
-            {
-                isSwinging = true;
-                playerAnim.SetFloat("Swing", 1f);
-                StartCoroutine("EndCycle");
-
-            }
 
 
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            playerAnim.SetBool("Switch", false);
+            //playerAnim.SetBool("Switch", false);
 
         }
         if(playerAnim.GetBool("Switch") == true)
@@ -69,6 +58,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             isSwinging = false;
+        }
+
+        if(health == 0)
+        {
+            playerAnim.SetBool("Impact", true);
         }
 
     }
@@ -81,11 +75,11 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = transform.TransformDirection(moveDirection);
 
-        if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && isSwinging == false)
+        if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && isSwinging == false && health != 0)
         {
             Walk();
         }
-        else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && isSwinging == false)
+        else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && isSwinging == false && health != 0)
         {
             Run();
         }
@@ -120,9 +114,9 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator WaitForAnimation()
     {
-        isSwinging = true;
-        yield return new WaitForSeconds(.5f);
-        counter++;
+        yield return new WaitForSeconds(.8f);
+        playerAnim.SetBool("Switch", false);
+        
     }
 
     IEnumerator EndCycle()
@@ -159,5 +153,14 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("EndSlow");
         playerAnim.speed = .75f;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "enemysword")
+        {
+
+            health -= 1;
+        }
+    }
+   
 
 }

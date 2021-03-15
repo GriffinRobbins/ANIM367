@@ -12,6 +12,14 @@ public class StopPathFinding : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GetComponentInParent<BasicAI>().SwingAtPlayer();
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

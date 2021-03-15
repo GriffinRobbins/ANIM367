@@ -13,12 +13,20 @@ public class BasicAI : MonoBehaviour
     public Animator playerAnim;
     public float speedSmoothTime = 0.1f;
 
+    public int health;
+
+    private Rigidbody rb;
+    public float knockbackStrength;
+
+    public bool playerIsSwinging;
+
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
         agent.autoBraking = false;
         playerAnim = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
 
         GotoNextPoint();
     }
@@ -26,7 +34,7 @@ public class BasicAI : MonoBehaviour
 
     void GotoNextPoint()
     {
-        
+
         if (points.Length == 0)
             return;
 
@@ -39,39 +47,56 @@ public class BasicAI : MonoBehaviour
 
     void Update()
     {
-  
+
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
+
+        if (health <= 0)
+        {
+            agent.isStopped = true;
+            playerAnim.SetBool("Impact", true);
+            Destroy(gameObject, 5);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            playerIsSwinging = true;
+            StartCoroutine("WaitForPlayer");
+
+        }
     }
 
+    IEnumerator WaitForPlayer()
+    {
+        yield return new WaitForSeconds(.5f);
+        playerIsSwinging = false;
+    }
     void FollowPlayer()
     {
         agent.destination = player.transform.position;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            FollowPlayer();
-            playerAnim.SetFloat("Forward_Velocity", 1f, speedSmoothTime, Time.deltaTime);
-            Debug.Log("player has entered");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            playerAnim.SetFloat("Forward_Velocity", 1f, speedSmoothTime, Time.deltaTime);
-            GotoNextPoint();
-        }
-    }
+  
 
     public void StopPathFinding()
     {
         playerAnim.SetFloat("Forward_Velocity", 0);
         agent.isStopped = true;
+        
+    }
+
+    public void SwingAtPlayer()
+    {
+        StartCoroutine("AttackPlayer");
+    }
+
+    IEnumerator AttackPlayer()
+    {
+        
+        yield return new WaitForSeconds(1f);
+        playerAnim.SetBool("Switch", true);
+        yield return new WaitForSeconds(.1f);
+        playerAnim.SetBool("Switch", false);
     }
 
     public void StartPathFinding()
@@ -80,6 +105,27 @@ public class BasicAI : MonoBehaviour
         agent.isStopped = false;
     }
 
+    public void FindPlayer()
+    {
+        FollowPlayer();
+        playerAnim.SetFloat("Forward_Velocity", 1f, speedSmoothTime, Time.deltaTime);
+        Debug.Log("player has entered");
+    }
+
+    public void LeavePlayer()
+    {
+        playerAnim.SetFloat("Forward_Velocity", 1f, speedSmoothTime, Time.deltaTime);
+        GotoNextPoint();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "playersword" && playerIsSwinging == true)
+        {
+            
+            health -= 1 ;  
+        }
+    }
 
 
 }

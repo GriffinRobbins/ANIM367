@@ -21,14 +21,19 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        int playerhealth = GetComponentInParent<PlayerController>().health;
 
-        Rotate();
-        roatation = self.rotation.x;
-        if(roatation != oldRotation)
+        if( playerhealth != 0)
         {
-            Debug.LogError("arrrrg");
-            oldRotation = roatation;
+            Rotate();
+            roatation = self.rotation.x;
+            if (roatation != oldRotation)
+            {
+                Debug.LogError("arrrrg");
+                oldRotation = roatation;
+            }
         }
+        
     }
 
     private void Rotate()
