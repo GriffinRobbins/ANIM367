@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class PlayerController : MonoBehaviour
     public int counter = 0;
 
     public int health = 5;
+
+    private bool dead = false;
+
+    public GameObject gameManager;
+
+    public Slider slider;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -28,7 +35,12 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        MovePlayer();
+        if( dead == false)
+        {
+            MovePlayer();
+        }
+            
+        
         
         if (Input.GetMouseButtonDown(0))
         {
@@ -63,6 +75,7 @@ public class PlayerController : MonoBehaviour
         if(health == 0)
         {
             playerAnim.SetBool("Impact", true);
+            dead = true;
         }
 
     }
@@ -75,11 +88,12 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = transform.TransformDirection(moveDirection);
 
-        if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && isSwinging == false && health != 0)
+        if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && isSwinging == false )
         {
             Walk();
+                     
         }
-        else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && isSwinging == false && health != 0)
+        else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && isSwinging == false && dead == false)
         {
             Run();
         }
@@ -157,8 +171,14 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "enemysword")
         {
-
-            health -= 1;
+            bool swinging = gameManager.GetComponent<GameManager>().SwingAtPlayer;
+            print(swinging);
+            if(swinging == true)
+            {
+                slider.value -= .1f;
+                health -= 1;
+            }
+            
         }
     }
    

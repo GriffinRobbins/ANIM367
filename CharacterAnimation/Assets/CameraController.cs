@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
             roatation = self.rotation.x;
             if (roatation != oldRotation)
             {
-                Debug.LogError("arrrrg");
+        
                 oldRotation = roatation;
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicAI : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class BasicAI : MonoBehaviour
     public float knockbackStrength;
 
     public bool playerIsSwinging;
+
+    public GameManager gameManager;
+
+    
 
     void Start()
     {
@@ -95,8 +100,10 @@ public class BasicAI : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
         playerAnim.SetBool("Switch", true);
+        gameManager.GetComponent<GameManager>().SetBoolTrue();
         yield return new WaitForSeconds(.1f);
         playerAnim.SetBool("Switch", false);
+        gameManager.GetComponent<GameManager>().SetBoolFalse();
     }
 
     public void StartPathFinding()
@@ -109,7 +116,7 @@ public class BasicAI : MonoBehaviour
     {
         FollowPlayer();
         playerAnim.SetFloat("Forward_Velocity", 1f, speedSmoothTime, Time.deltaTime);
-        Debug.Log("player has entered");
+        //Debug.Log("player has entered");
     }
 
     public void LeavePlayer()
