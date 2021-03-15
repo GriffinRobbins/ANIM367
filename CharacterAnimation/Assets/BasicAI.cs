@@ -21,7 +21,7 @@ public class BasicAI : MonoBehaviour
 
     public bool playerIsSwinging;
 
-    public GameManager gameManager;
+    public GameObject gameManager;
 
     
 
@@ -101,7 +101,7 @@ public class BasicAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         playerAnim.SetBool("Switch", true);
         gameManager.GetComponent<GameManager>().SetBoolTrue();
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         playerAnim.SetBool("Switch", false);
         gameManager.GetComponent<GameManager>().SetBoolFalse();
     }
