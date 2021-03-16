@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public GameObject gameManager;
 
     public Slider slider;
+
+    public GameObject player;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -38,6 +40,11 @@ public class PlayerController : MonoBehaviour
         if( dead == false)
         {
             MovePlayer();
+        }
+
+        if(player.transform.position.y >= .05)
+        {
+            transform.position = new Vector3(transform.position.x, .025f, transform.position.z);
         }
             
         

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.91.2 commit date:2021-01-19, commit time:16:15, hash:5be9ef417703</authoring_tool>
+    </contributor>
+    <created>2021-01-26T22:28:53</created>
+    <modified>2021-01-26T22:28:53</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="lambert3-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.5 0.5 0.5 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="lambert3-material" name="lambert3">
+      <instance_effect url="#lambert3-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Mesh_010-mesh" name="Mesh.010">
+      <mesh>
+        <source id="Mesh_010-mesh-positions">
+          <float_array id="Mesh_010-mesh-positions-array" count="24">-0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.4999999 0.5 0.5 0.4999999 0.5 -0.5 0.4999999 -0.5 0.5 0.4999999 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5</float_array>
+          <technique_common>
+            <accessor source="#Mesh_010-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mesh_010-mesh-normals">
+          <float_array id="Mesh_010-mesh-normals-array" count="18">0 0 1 0 1 0 0 0 -1 0 -1 0 1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Mesh_010-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mesh_010-mesh-map-0">
+          <float_array id="Mesh_010-mesh-map-0-array" count="72">0.09036952 0 0 1 0 0 0.4517591 0 0.3653499 0.08640915 0.3653499 0 0.1829582 1 0.09258866 0 0.09258866 1 0.539343 0.08640915 0.4529338 0 0.4529338 0.08640915 0.3633041 0 0.2752636 0.7532696 0.2752636 0 0.2732179 0 0.1851773 0.7532696 0.1851773 0 0.09036952 0 0.09036952 1 0 1 0.4517591 0 0.4517591 0.08640915 0.3653499 0.08640915 0.1829582 1 0.1829582 0 0.09258866 0 0.539343 0.08640915 0.539343 0 0.4529338 0 0.3633041 0 0.3633041 0.7532696 0.2752636 0.7532696 0.2732179 0 0.2732179 0.7532696 0.1851773 0.7532696</float_array>
+          <technique_common>
+            <accessor source="#Mesh_010-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Mesh_010-mesh-vertices">
+          <input semantic="POSITION" source="#Mesh_010-mesh-positions"/>
+        </vertices>
+        <triangles material="lambert3-material" count="12">
+          <input semantic="VERTEX" source="#Mesh_010-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Mesh_010-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Mesh_010-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 4 1 4 2 1 5 5 2 6 6 2 7 4 2 8 7 3 9 0 3 10 6 3 11 7 4 12 3 4 13 1 4 14 0 5 15 4 5 16 6 5 17 1 0 18 3 0 19 2 0 20 3 1 21 5 1 22 4 1 23 5 2 24 7 2 25 6 2 26 7 3 27 1 3 28 0 3 29 7 4 30 5 4 31 3 4 32 0 5 33 2 5 34 4 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Pillar" name="Pillar" type="NODE">
+        <matrix sid="transform">0.5382658 0 0 0 0 -1.13938e-6 -0.5382658 0 0 6.993476 -8.76946e-8 0 0 0 0 1</matrix>
+        <instance_geometry url="#Mesh_010-mesh" name="Pillar">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert3-material" target="#lambert3-material">
+                <bind_vertex_input semantic="map1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.90.1 commit date:2020-09-23, commit time:06:43, hash:3e85bb34d0d7</authoring_tool>
+    </contributor>
+    <created>2021-02-16T15:06:54</created>
+    <modified>2021-02-16T15:06:54</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="lambert1_001-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.5 0.5 0.5 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="lambert1_001-material" name="lambert1.001">
+      <instance_effect url="#lambert1_001-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Mesh_001-mesh" name="Mesh.001">
+      <mesh>
+        <source id="Mesh_001-mesh-positions">
+          <float_array id="Mesh_001-mesh-positions-array" count="42">-34.19929 -5.252979 -9.857289 -34.19929 6.004982 -9.857286 -34.19929 -10.9814 -7.15255e-7 -34.19927 -5.252975 9.857289 -34.19929 5.24799 9.857289 -34.19929 10.97766 -0.01025724 -34.19929 0.4298439 1.90735e-6 34.19929 -5.245245 -9.830459 34.19929 -10.9717 3.91204e-4 34.19929 -5.247837 9.857548 34.19929 5.250607 9.860227 34.19929 10.99986 -0.03266602 34.19929 5.998964 -9.836957 34.19928 0.4315052 -0.001288354</float_array>
+          <technique_common>
+            <accessor source="#Mesh_001-mesh-positions-array" count="14" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mesh_001-mesh-normals">
+          <float_array id="Mesh_001-mesh-normals-array" count="75">2.60091e-4 -0.5014538 -0.8651844 3.54529e-4 0.5187326 -0.8549366 -4.39566e-5 0.517009 -0.85598 2.29395e-4 -1 2.8428e-4 3.9695e-4 -0.5017877 -0.8649908 1.12423e-4 -0.9999998 -6.59585e-4 6.419e-5 -0.5184692 0.8550963 2.14975e-5 -0.518645 0.8549898 -4.35602e-5 0.5190904 0.8547194 -8.91428e-5 0.5188745 0.8548505 4.87466e-5 0.9992599 0.03846865 -3.18642e-4 0.9993097 0.03715008 -1 0 0 -1 0 0 -1 -1.93647e-7 3.6866e-7 -1 0 7.73985e-7 -1 -8.8381e-7 1.12943e-6 -1 -7.12469e-7 3.78065e-7 -1 2.3807e-7 0 1 0 1.94879e-7 1 1.29906e-7 -1.94238e-7 1 0 -3.86875e-7 1 -5.84789e-7 -2.10131e-7 1 5.3762e-7 1.83835e-7 1 -5.52064e-7 3.8797e-7</float_array>
+          <technique_common>
+            <accessor source="#Mesh_001-mesh-normals-array" count="25" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mesh_001-mesh-map-0">
+          <float_array id="Mesh_001-mesh-map-0-array" count="144">0.1967895 0.1551709 0.3064482 0.01619297 0.3040023 0.166819 0.1967895 0.1551709 0.08696341 0.01829612 0.1974568 0.01799929 0.7358752 0.1564441 0.6292619 0.0256173 0.7397125 0.02921992 0.6258937 0.1627691 0.5276677 0.02093863 0.6292619 0.0256173 0.521868 0.1705087 0.4151926 0.01611357 0.5276677 0.02093863 0.3040023 0.166819 0.4151926 0.01611357 0.4117634 0.170523 0.7109546 0.4797257 0.7109546 0.3707987 0.8063294 0.4257831 0.7109546 0.3707987 0.8063294 0.315373 0.8063294 0.4257831 0.8063294 0.315373 0.901704 0.3707987 0.8063294 0.4257831 0.901704 0.3707987 0.901704 0.4724013 0.8063294 0.4257831 0.901704 0.4724013 0.8062301 0.5278392 0.8063294 0.4257831 0.8062301 0.5278392 0.7109546 0.4797257 0.8063294 0.4257831 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0 0 1 0 0.5 1 0.1967895 0.1551709 0.1974568 0.01799929 0.3064482 0.01619297 0.1967895 0.1551709 0.08704429 0.1455538 0.08696341 0.01829612 0.7358752 0.1564441 0.6258937 0.1627691 0.6292619 0.0256173 0.6258937 0.1627691 0.521868 0.1705087 0.5276677 0.02093863 0.521868 0.1705087 0.4117634 0.170523 0.4151926 0.01611357 0.3040023 0.166819 0.3064482 0.01619297 0.4151926 0.01611357</float_array>
+          <technique_common>
+            <accessor source="#Mesh_001-mesh-map-0-array" count="72" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Mesh_001-mesh-vertices">
+          <input semantic="POSITION" source="#Mesh_001-mesh-positions"/>
+        </vertices>
+        <triangles material="lambert1_001-material" count="24">
+          <input semantic="VERTEX" source="#Mesh_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Mesh_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Mesh_001-mesh-map-0" offset="2" set="0"/>
+          <p>7 0 0 1 1 1 12 2 2 7 0 3 2 3 4 0 4 5 8 5 6 3 6 7 2 3 8 9 7 9 4 8 10 3 6 11 10 9 12 5 10 13 4 8 14 12 2 15 5 10 16 11 11 17 1 12 18 0 13 19 6 14 20 0 13 21 2 15 22 6 14 23 2 15 24 3 16 25 6 14 26 3 16 27 4 17 28 6 14 29 4 17 30 5 18 31 6 14 32 5 18 33 1 12 34 6 14 35 8 19 36 7 19 37 13 19 38 9 20 39 8 20 40 13 20 41 10 21 42 9 21 43 13 21 44 11 22 45 10 22 46 13 22 47 12 23 48 11 23 49 13 23 50 7 24 51 12 24 52 13 24 53 7 0 54 0 4 55 1 1 56 7 0 57 8 5 58 2 3 59 8 5 60 9 7 61 3 6 62 9 7 63 10 9 64 4 8 65 10 9 66 11 11 67 5 10 68 12 2 69 1 1 70 5 10 71</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="PipeStraightV02" name="PipeStraightV02" type="NODE">
+        <matrix sid="transform">0.01 0 0 0 0 -1.62921e-9 -0.01 0 0 0.01 -1.62921e-9 0 0 0 0 1</matrix>
+        <instance_geometry url="#Mesh_001-mesh" name="PipeStraightV02">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert1_001-material" target="#lambert1_001-material">
+                <bind_vertex_input semantic="map1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

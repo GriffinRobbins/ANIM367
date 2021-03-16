@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author/>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments/>
+    </contributor>
+    <created>2021-02-16T15:16:48Z</created>
+    <keywords/>
+    <modified>2021-02-16T15:16:48Z</modified>
+    <revision/>
+    <subject/>
+    <title/>
+    <unit meter="0.025400" name="centimeter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx" name="lambert1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.400000  0.400000 0.400000 1.000000</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000  0.000000 0.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Straight_Pipe-lib" name="Straight_PipeMesh">
+      <mesh>
+        <source id="Straight_Pipe-POSITION">
+          <float_array id="Straight_Pipe-POSITION-array" count="54">
+35.162201 7.761324 -7.669088
+35.131771 0.092288 -10.845728
+35.101334 -7.576727 -7.669088
+35.088707 -10.753339 0.000000
+35.101334 -7.576727 7.669088
+35.131771 0.092288 10.845728
+35.162201 7.761324 7.669088
+35.174835 10.937933 0.000000
+-34.313271 7.761324 -7.669088
+-34.343697 0.092288 -10.845728
+-34.343697 0.092288 0.000000
+-34.374142 -7.576727 -7.669088
+-34.386761 -10.753339 0.000000
+-34.374142 -7.576727 7.669088
+-34.343697 0.092288 10.845728
+-34.313271 7.761324 7.669088
+-34.300652 10.937933 0.000000
+35.131771 0.092295 -0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Straight_Pipe-POSITION-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Straight_Pipe-Normal0">
+          <float_array id="Straight_Pipe-Normal0-array" count="54">
+0.058490 0.706266 -0.705526
+0.058441 0.000733 -0.998291
+0.058391 -0.705537 -0.706263
+0.058370 -0.998295 -0.000000
+0.058391 -0.705537 0.706263
+0.058441 0.000733 0.998291
+0.058490 0.706266 0.705526
+0.058510 0.998287 0.000000
+-0.058391 0.705537 -0.706264
+-0.058441 -0.000733 -0.998291
+-0.999992 0.003969 0.000000
+-0.058490 -0.706267 -0.705526
+-0.058510 -0.998287 0.000000
+-0.058490 -0.706267 0.705526
+-0.058441 -0.000733 0.998291
+-0.058391 0.705537 0.706264
+-0.058370 0.998295 0.000000
+0.999992 -0.003969 -0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Straight_Pipe-Normal0-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Straight_Pipe-UV0">
+          <float_array id="Straight_Pipe-UV0-array" count="84">
+0.965186 0.251472
+0.881139 0.294618
+0.881139 0.147309
+0.797091 0.251472
+1.000000 0.147309
+0.762277 0.147309
+0.965186 0.043146
+0.797091 0.043146
+0.881139 0.000000
+0.881139 0.294603
+0.965186 0.337749
+0.881139 0.441912
+1.000000 0.441912
+0.797091 0.337749
+0.965186 0.546076
+0.762277 0.441912
+0.881139 0.589221
+0.797091 0.546076
+0.212180 0.000000
+0.316343 0.000172
+0.316343 0.943802
+0.212180 0.943631
+0.420507 0.000000
+0.420507 0.943631
+0.000000 0.000172
+0.104163 0.000000
+0.104163 0.943631
+0.000000 0.943802
+0.208327 0.000172
+0.208327 0.943802
+0.593319 0.000000
+0.677367 0.000414
+0.677367 0.944044
+0.593319 0.943631
+0.761414 0.000827
+0.761414 0.944458
+0.424361 0.000827
+0.508408 0.000413
+0.508408 0.944044
+0.424361 0.944457
+0.592456 0.000000
+0.592456 0.943631
+</float_array>
+          <technique_common>
+            <accessor source="#Straight_Pipe-UV0-array" count="42" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Straight_Pipe-VERTEX">
+          <input semantic="POSITION" source="#Straight_Pipe-POSITION"/>
+          <input semantic="NORMAL" source="#Straight_Pipe-Normal0"/>
+        </vertices>
+        <triangles count="32" material="lambert1">
+          <input semantic="VERTEX" offset="0" source="#Straight_Pipe-VERTEX"/>
+          <input semantic="TEXCOORD" offset="1" set="0" source="#Straight_Pipe-UV0"/>
+          <p> 8 0 9 1 10 2 9 1 11 3 10 2 11 3 12 5 10 2 12 5 13 7 10 2 13 7 14 8 10 2 14 8 15 6 10 2 15 6 16 4 10 2 16 4 8 0 10 2 1 31 8 33 0 30 8 33 1 31 9 32 2 34 9 32 1 31 9 32 2 34 11 35 3 19 11 21 2 18 11 21 3 19 12 20 13 23 3 19 4 22 3 19 13 23 12 20 14 38 4 36 5 37 4 36 14 38 13 39 15 41 5 37 6 40 5 37 15 41 14 38 7 25 16 26 6 24 15 27 6 24 16 26 0 28 16 26 7 25 16 26 0 28 8 29 1 9 0 10 17 11 2 13 1 9 17 11 3 15 2 13 17 11 4 17 3 15 17 11 5 16 4 17 17 11 6 14 5 16 17 11 7 12 6 14 17 11 0 10 7 12 17 11</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Straight_Pipe" name="Straight_Pipe">
+      <node name="Straight_Pipe" id="Straight_Pipe" sid="Straight_Pipe">
+        <matrix sid="matrix">0.393701 0.000000 0.000000 -0.000000 0.000000 0.393701 0.000000 0.000000 0.000000 0.000000 0.393701 -0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+        <instance_geometry url="#Straight_Pipe-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert1" target="#lambert1"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="FCOLLADA">
+            <visibility>1.000000</visibility>
+          </technique>
+        </extra>
+      </node>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>24.000000</frame_rate>
+        </technique>
+        <technique profile="FCOLLADA">
+          <start_time>0.041667</start_time>
+          <end_time>8.333333</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Straight_Pipe"/>
+  </scene>
+</COLLADA>

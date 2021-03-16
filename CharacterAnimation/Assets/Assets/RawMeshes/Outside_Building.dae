@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author/>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments/>
+    </contributor>
+    <created>2021-02-03T19:31:25Z</created>
+    <keywords/>
+    <modified>2021-02-03T19:31:25Z</modified>
+    <revision/>
+    <subject/>
+    <title/>
+    <unit meter="0.025400" name="centimeter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="lambert4" name="lambert4">
+      <instance_effect url="#lambert4-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert4-fx" name="lambert4">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.400000  0.400000 0.400000 1.000000</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000  0.000000 0.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Outside_Building-lib" name="Outside_BuildingMesh">
+      <mesh>
+        <source id="Outside_Building-POSITION">
+          <float_array id="Outside_Building-POSITION-array" count="24">
+-266.055206 -321.660309 121.821198
+266.055206 -321.660309 121.821198
+-266.055206 321.660309 121.821198
+266.055206 321.660309 121.821198
+-266.055206 321.660309 -121.821198
+266.055206 321.660309 -121.821198
+-266.055206 -321.660309 -121.821198
+266.055206 -321.660309 -121.821198
+</float_array>
+          <technique_common>
+            <accessor source="#Outside_Building-POSITION-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Outside_Building-Normal0">
+          <float_array id="Outside_Building-Normal0-array" count="108">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Outside_Building-Normal0-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Outside_Building-UV0">
+          <float_array id="Outside_Building-UV0-array" count="48">
+0.423884 0.534005
+0.662769 0.534005
+0.662769 1.000000
+0.423884 1.000000
+0.663300 0.534005
+0.902185 0.534005
+0.902185 1.000000
+0.663300 1.000000
+0.423884 0.267003
+0.847952 0.267003
+0.847952 0.534005
+0.423884 0.534005
+0.423884 0.000000
+0.847953 0.000000
+0.847953 0.267003
+0.423884 0.267003
+0.000000 0.423406
+0.423404 0.423406
+0.423404 0.846810
+0.000000 0.846810
+0.000000 0.000000
+0.423404 0.000000
+0.423404 0.423406
+0.000000 0.423406
+</float_array>
+          <technique_common>
+            <accessor source="#Outside_Building-UV0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Outside_Building-VERTEX">
+          <input semantic="POSITION" source="#Outside_Building-POSITION"/>
+        </vertices>
+        <triangles count="12" material="lambert4">
+          <input semantic="VERTEX" offset="0" source="#Outside_Building-VERTEX"/>
+          <input semantic="NORMAL" offset="1" source="#Outside_Building-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Outside_Building-UV0"/>
+          <p> 3 0 18 2 1 19 0 2 16 3 3 18 0 4 16 1 5 17 2 6 8 3 7 9 5 8 10 2 9 8 5 10 10 4 11 11 7 12 22 6 13 23 4 14 20 7 15 22 4 16 20 5 17 21 1 18 14 0 19 15 6 20 12 1 21 14 6 22 12 7 23 13 7 24 1 5 25 2 1 26 0 3 27 3 1 28 0 5 29 2 2 30 6 6 31 4 0 32 5 6 33 4 2 34 6 4 35 7</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Outside_Building" name="Outside_Building">
+      <node name="Outside_Building" id="Outside_Building" sid="Outside_Building">
+        <matrix sid="matrix">0.393701 0.000000 0.000000 0.000000 0.000000 0.393701 0.000000 0.000000 0.000000 0.000000 0.393701 0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+        <instance_geometry url="#Outside_Building-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert4" target="#lambert4"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="FCOLLADA">
+            <visibility>1.000000</visibility>
+          </technique>
+        </extra>
+      </node>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>24.000000</frame_rate>
+        </technique>
+        <technique profile="FCOLLADA">
+          <start_time>0.041667</start_time>
+          <end_time>8.333333</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Outside_Building"/>
+  </scene>
+</COLLADA>
