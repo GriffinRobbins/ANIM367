@@ -4883,7 +4883,7 @@ MonoBehaviour:
   speedSmoothTime: 0.1
   isSwinging: 0
   counter: 0
-  health: 10
+  health: 5
   gameManager: {fileID: 2001839745}
   slider: {fileID: 1280000594}
   player: {fileID: 1072410340}
@@ -4915,7 +4915,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!143 &1072410345
 CharacterController:

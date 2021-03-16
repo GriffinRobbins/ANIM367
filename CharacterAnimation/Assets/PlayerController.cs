@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
             print(swinging);
             if(swinging == true)
             {
-                slider.value -= .1f;
+                slider.value -= .2f;
                 health -= 1;
             }
             
