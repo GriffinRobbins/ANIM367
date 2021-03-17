@@ -184,10 +184,19 @@ public class PlayerController : MonoBehaviour
             {
                 slider.value -= .2f;
                 health -= 1;
+                playerAnim.SetBool("Knockback", true);
+                StartCoroutine("WaitForKnock");
             }
             
         }
+        
     }
-   
+
+    IEnumerator WaitForKnock()
+    {
+        yield return new WaitForSeconds(.1f);
+        playerAnim.SetBool("Knockback", false);
+    }
+
 
 }

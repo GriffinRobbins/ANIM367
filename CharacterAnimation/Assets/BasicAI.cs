@@ -129,10 +129,19 @@ public class BasicAI : MonoBehaviour
     {
         if(collision.gameObject.tag == "playersword" && playerIsSwinging == true)
         {
-            
-            health -= 1 ;  
+            playerAnim.SetBool("Knockback", true);
+            health -= 1 ;
+            StartCoroutine("WaitForKnock");
         }
     }
+
+    IEnumerator WaitForKnock()
+    {
+        yield return new WaitForSeconds(.1f);
+        playerAnim.SetBool("Knockback", false);
+    }
+
+ 
 
 
 }
